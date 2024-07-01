@@ -1,6 +1,6 @@
 module FixedFunctions
 
-export FixedFunction, Free, VarFree
+export FixedFunction, Free, VarFree, fix
 
 """
     Free()
@@ -95,5 +95,16 @@ arguments `kwargs`.
 
     return expr
 end
+
+"""
+    fix(func, args...; kwargs...)
+
+Create a [`FixedFunction`](@ref) that partially applies the function `func` to positional
+arguments `args` and keyword arguments `kwargs`.
+
+A single free positional argument is indicated by [`Free()`](@ref) and a variable-length
+sequence of free arguments is indicated by [`VarFree()`](@ref).
+"""
+fix(func, args...; kwargs...) = FixedFunction(func, args, values(kwargs))
 
 end

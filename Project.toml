@@ -1,0 +1,7 @@
+name = "FixedFunctions"
+uuid = "b42d3fd7-3dae-4b4c-9d71-0567269ab31c"
+authors = ["Thomas Graham"]
+version = "0.0.0"
+
+[compat]
+julia = "1.6"
